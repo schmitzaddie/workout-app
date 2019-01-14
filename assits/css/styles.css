@@ -1,0 +1,68 @@
+body {
+    background-image: url("../imgs/bg-01.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: pink;
+}
+
+#fader{
+    background-color: black;
+    opacity: .8;
+    width: 100%;
+    height: 100vh;
+}
+#mainContent {
+    position: relative;
+    width: 85vw;
+    height: 76vh;
+    top: 5%;
+    min-width: 701px;
+    min-height: 720px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(top, #E31837, #FFB81C);
+    background: -o-linear-gradient(top, #E31837, #FFB81C);
+    background: -moz-linear-gradient(top, #E31837, #FFB81C);
+    background: linear-gradient(top, #E31837, #FFB81C);
+}
+.btn {
+    border: none;
+    background-color: purple;
+    width: 50%;
+    font-size: 100%;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.btn:hover{
+    background-color: #eb92a1;
+}
+.timer {
+    font-size: 75px;
+    line-height: 110%;
+}
+.PPS-buttons {
+    color: #eb92a1;
+}
+.data-box {
+    margin-left: 10px; 
+    width: 85%;
+    height: 100%;
+    background-color: #eb92a1;
+    border: 1px solid purple;
+}
+.set {
+    margin-top: 15px;
+}
+.musicCtrl {
+    font-size: 30px;
+    margin: 5px;
+    padding-right: 12px;
+    border-right: 1px solid purple;
+}
+.musicCtrl:last-child{
+    border: none;
+}

@@ -17,37 +17,83 @@
         <img id="logo" src="assets/imgs/logo.png" style="height:15%;" />
         <div class="row set">
             <div class="col-md-4">
-                <div class="data-box"></div>
+                <div class="data-box">
+
+                    <button onclick="myFunction()" class="dropbtn">View workouts</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#deadlift">Deadlift</a>
+                        <a href="#bench-press">Bench Press</a>
+                        <a href="#Squat">Squat</a>
+                        <a href="#pushups">Pushups</a>
+                        <a href="#pullups">Pullups</a>
+                        <a href="#crunches">Crunches</a>
+                        <a href="#lateral-raises">Lateral Raises</a>
+                        <a href="#dips">Dips</a>
+                        <a href="#calf-raises">Standing Calf Raises</a>
+                        <a href="#bicep-curls">Bicep Curls</a>
+
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="row justify-content-md-center timer" id="seconds">00:00</div>
                 <div class="row justify-content-md-center">
-                    <button type="button" class="myWo btn btn-primary">RECORD IT</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recordItModal">RECORD
+                        IT</button>
+                </div>
+                <div class="modal fade" id="recordItModal" tabindex="-1" role="dialog" aria-labelledby="recordItModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="recordItModal">RECORD IT</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="setInput">Sets</label>
+                                        <input type="text" class="form-control" id="setInput">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="repInput">Reps</label>
+                                        <input type="text" class="form-control" id="repInput">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="weightInput">Weight</label>
+                                        <input type="text" class="form-control" id="weightInput" placeholder="Don't lie...">
+                                    </div>
+                                </form>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row justify-content-md-center">
-                    <button  type="button" class=" btn btn-primary">HELP ME</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#helpMeModal">HELP
+                        ME</button>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div id = "play" class="timer zmdi zmdi-play col-md-3"></div>
-                <div id ="pause" class="timer zmdi zmdi-pause col-md-3"></div>
-                <div id = "stop" class="timer zmdi zmdi-stop col-md-3"></div>
-                <div class="row justify-content-md-center">
-                    <button type="button" class="btn btn-primary">ADDIE'S INSPO</button>
-                </div>
-            </div>
-        </div>
-        <div class="row set">
-            <div class="col-md-4">
-                <div class="data-box"></div>
-            </div>
-            <div class="col-md-4">
-                <div class="row justify-content-md-center timer" id="timer">00:00</div>
-                <div class="row justify-content-md-center">
-                    <button type="button" class="myWo btn btn-primary">RECORD IT</button>
-                </div>
-                <div class="row justify-content-md-center">
-                    <button type="button" class="btn btn-primary">HELP ME</button>
+                <div class="modal fade" id="helpMeModal" tabindex="-1" role="dialog" aria-labelledby="helpMeModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="helpMeModal">HELP ME</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it.</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -59,31 +105,26 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row set">
-            <div class="col-4">
-                <div class="data-box"></div>
-            </div>
-            <div class="col-4">
-                <div class="row justify-content-center timer" id="">00:00</div>
-                <div class="row justify-content-center">
-                    <button type="button" class="btn btn-primary">RECORD IT</button>
-                </div>
-                <div class="row justify-content-center">
-                    <button type="button" class="btn btn-primary">HELP ME</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="timer zmdi zmdi-play col-3"></div>
-                <div class="timer zmdi zmdi-pause col-3"></div>
-                <div class="timer zmdi zmdi-stop col-3"></div>
-                <div class="row justify-content-md-center">
-                    <button type="button" class="btn btn-primary">ADDIE'S INSPO</button>
-                </div>
-            </div>
-        </div> -->
         <div class="row justify-content-md-center">
-            <button type="button" class="btn btn-primary" style="width: 95px;">I QUIT</button>
-        </div> 
+            <button type="button" class="btn btn-primary" style="width: 95px;" data-toggle="modal" data-target="#doneModal">DONE</button>
+        </div>
+        <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="doneModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="doneModal">COMPLETED SESSION</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-md-center">Listening to Spotfiy&reg;</div>
         <div class="row justify-content-md-center"><span>Artist -</span><span>Song</span></div>
         <div class="row justify-content-md-center">
@@ -91,17 +132,18 @@
             <div class="zmdi zmdi-play musicCtrl"></div>
             <div class="zmdi zmdi-pause musicCtrl"></div>
             <div class="zmdi zmdi-skip-next musicCtrl"></div>
-
         </div>
-
-
     </div>
-
-
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
         crossorigin='anonymous'></script>
         <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="assets/scripts/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="./assets/scripts/main.js"></script>
 </body>
 
 </html>

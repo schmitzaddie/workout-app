@@ -24,14 +24,14 @@ body {
     min-width: 701px;
     min-height: 720px;
     border-radius: 10px;
-    background: -webkit-linear-gradient(top, #E31837, #FFB81C);
-    background: -o-linear-gradient(top, #E31837, #FFB81C);
-    background: -moz-linear-gradient(top, #E31837, #FFB81C);
-    background: linear-gradient(top, #E31837, #FFB81C);
+    background: -webkit-linear-gradient(top, #ff51b1, #3a3a3a);
+    background: -o-linear-gradient(top, #ff51b1, #3a3a3a);
+    background: -moz-linear-gradient(top, #ff51b1, #3a3a3a);
+    background: linear-gradient(top, #ff51b1, #3a3a3a);
 }
 .btn {
     border: none;
-    background-color: purple;
+    background-color: #3a3a3a;
     width: 50%;
     font-size: 100%;
     font-weight: bold;
@@ -52,7 +52,7 @@ body {
     width: 85%;
     height: 100%;
     background-color: #eb92a1;
-    border: 1px solid purple;
+    border: 1px solid #3a3a3a;
 }
 .set {
     margin-top: 15px;
@@ -61,7 +61,7 @@ body {
     font-size: 30px;
     margin: 5px;
     padding-right: 12px;
-    border-right: 1px solid purple;
+    border-right: 1px solid #3a3a3a;
 }
 .musicCtrl:last-child{
     border: none;

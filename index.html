@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="row justify-content-md-center timer" id="seconds">00:00</div>
+                <div class="row justify-content-md-center timer" id="display">00:00</div>
                 <div class="row justify-content-md-center">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recordItModal">RECORD
                         IT</button>
@@ -95,10 +95,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="timer zmdi zmdi-play col-md-3"></div>
-                <div class="timer zmdi zmdi-pause col-md-3"></div>
-                <div class="timer zmdi zmdi-stop col-md-3"></div>
+
+
+            <div id = "tmrBtn" class="col-md-4">
+                <div id = "play" class="timer zmdi zmdi-play col-md-3"></div>
+                <div id = "pause" class="timer zmdi zmdi-pause col-md-3"></div>
+                <div id = "stop" class="timer zmdi zmdi-stop col-md-3"></div>
+
+
                 <div class="row justify-content-md-center">
                     <button id="inspo" type="button" class="btn btn-primary">ADDIE'S INSPO</button>
                 </div>

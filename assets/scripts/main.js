@@ -16,7 +16,7 @@ $(document).ready(function () {
     //An array to house all of the URLs of your sounds
     //insert sas file//
     var soundfile = sounds[Math.floor(Math.random() * sounds.length)];
-    document.getElementById("inspo").innerHTML = "<embed src=\"" + soundfile + "\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+    $("#inspo").append("<embed src='" + soundfile + "' hidden='true' autostart='true' loop='false' />");
   }
 
   $(".dropbtn").click(function () {

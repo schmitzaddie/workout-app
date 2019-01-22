@@ -28,7 +28,7 @@ $(document).ready(function () {
       if (snapshot.hasChild(userID)) {
         if (snapshot.val()[userID].accntDetails.userPassword === $('#pass').val()) {
           localStorage.setItem("userID",userID);
-          window.location.href = 'workout.html';
+          window.location.href = 'https://schmitzaddie.github.io/workout-app/workout.html';
         } else {
           console.log("wrong pass");
           $('.login').addClass('shake');

@@ -20,8 +20,7 @@ $(document).ready(function () {
     e.preventDefault();
     user = $('#user').val();
     for (var i = 0; i < user.length; i++) {
-      tempBi = user.charAt(i).toLowerCase().charCodeAt(0).toString(16);
-      userID += tempBi.toString(16);
+      userID += user.charAt(i).toLowerCase().charCodeAt(0).toString(16);
     };
     database.ref("users").once('value', function (snapshot) {
       console.log(snapshot.val())
@@ -59,12 +58,13 @@ $(document).ready(function () {
       userPassword: $('#password').val()
     };
     for (var i = 0; i < accntDetails.userName.length; i++) {
-      tempBi = accntDetails.userName.charAt(i).toLowerCase().charCodeAt(0).toString(16);
+      userID += accntDetails.userName.charAt(i).toLowerCase().charCodeAt(0).toString(16);
     };
     if ($('#confirmPassword').val() === accntDetails.userPassword
       && accntDetails.userEmail.length > 4 && accntDetails.userName.length > 4) {
       ////////////////////////////////////////////////////////////////////
       database.ref('users/' + userID).update({ accntDetails });
+      $('#newUserModal').modal('hide');
     } else {
       console.log('please enter valid info');
     };

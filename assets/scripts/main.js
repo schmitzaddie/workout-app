@@ -28,23 +28,7 @@ $(document).ready(function () {
     audioElement.pause();
     audioElement.play();
 }
-  // $("#inspo").click(function () {
-  //   var soundfile = sounds[Math.floor(Math.random() * sounds.length)];
-  //   $("#inspo").append("<embed src='" + soundfile + "'hidden='true' autostart='true' loop='false' />");
-  // });
-
-//   $('document').ready(function () {
-//     $('#play').click(function () {
-//         var audio = {};
-//         audio["walk"] = new Audio();
-//         audio["walk"].src = "http://www.rangde.org/static/bell-ring-01.mp3"
-//         audio["walk"].addEventListener('load', function () {
-//             audio["walk"].play();
-//         });
-//     });
-// });   
-
-
+  
   $.each(playlistSelection, function(i,val){
     btn = $("<button class='btn btn-primary'>");
     btn.text(val[0]);

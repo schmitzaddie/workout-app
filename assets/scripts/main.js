@@ -15,16 +15,20 @@ $(document).ready(function () {
     storageBucket: "workout-app-4ece3.appspot.com",
     messagingSenderId: "1003379802026"
   };
-  var sounds = [];
 
   firebase.initializeApp(config);
   var database = firebase.database();
-  function playRandomSound() {
-    //An array to house all of the URLs of your sounds
-    //insert sas file//
-    var soundfile = sounds[Math.floor(Math.random() * sounds.length)];
-    $("#inspo").append("<embed src='" + soundfile + "'hidden='true' autostart='true' loop='false' />");
-  }
+
+  var sounds = ["sound1", "sound2", "sound3", "sound4", "sound5", "sound6", "sound7", "sound8", "sound9"];
+
+  document.getElementById("inspo").onclick = function (){
+    var index = Math.floor(Math.random() * sounds.length);
+    var id = sounds[index];
+    var audioElement = document.getElementById(id);
+    audioElement.pause();
+    audioElement.play();
+}
+  
   $.each(playlistSelection, function(i,val){
     btn = $("<button class='btn btn-primary'>");
     btn.text(val[0]);

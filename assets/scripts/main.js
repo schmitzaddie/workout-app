@@ -136,7 +136,6 @@ var newPlaylist = function (playlistID) {
     currentItem = 0
     youtubePlaylist = response;
     vidURL = "https://www.youtube.com/embed/" + response.items[currentItem].contentDetails.videoId;
-    $("#player").append(vidURL);
-    $("#player").attr("src", vidURL);
+    $("#ytplayer").attr("src", vidURL);
   });
 }

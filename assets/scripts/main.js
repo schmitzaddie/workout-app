@@ -22,7 +22,7 @@ $(document).ready(function () {
   var sounds = ["sound1", "sound2", "sound3", "sound4", "sound5", "sound6", "sound7", "sound8", "sound9"];
 
   document.getElementById("inspo").onclick = function (){
-    var index = Math.floor(Math.random() * 10) % sounds.length;
+    var index = Math.floor(Math.random() * sounds.length);
     var id = sounds[index];
     var audioElement = document.getElementById(id);
     audioElement.pause();

@@ -124,7 +124,7 @@ var newPlaylist = function (playlistID) {
       currentItem--;
     };
     vidURL = "https://www.youtube.com/embed/" + youtubePlaylist.items[currentItem].contentDetails.videoId;
-    $("#player").attr("src", vidURL);
+    $("#ytplayer").attr("src", vidURL);
   });
   var queryURL =  "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=25&playlistId="
                   +playlistID+

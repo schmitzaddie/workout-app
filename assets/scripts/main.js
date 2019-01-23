@@ -136,3 +136,65 @@ var newPlaylist = function (playlistID) {
     $("#player").attr("src", vidURL);
   });
 }
+// var mGroup = {};
+    
+
+// varQueryURL = "https://wger.de/api/v2/exercisecategory/?format=json"
+// $('#helpMeModal').on('click', function () {
+//   API_KEY = "79b9f9a7451896388ccd98b0e512c33ea8d732c4";
+//   $.ajax({
+//     url: varQueryURL,
+//     method: "GET",
+//     headers: {
+//       "Authorization": "Token " + API_KEY
+//     }
+//   }).then(function (response) {
+//     for (var i = 0; i < response.count; i++) {
+//       mGroup[response.results[i].name] = response.results[i].id;
+//     };
+//     $.each(mGroup, function (index, value) {
+//       exerciseURL = "https://wger.de/api/v2/exercise/?category=" + value + "&language=2&license_author=wger.de&format=json";
+//       newBtn = $("<button>");
+//       newBtn.attr("data-url", exerciseURL);
+//       newBtn.text(index);
+//       newBtn.attr("id", index.toLowerCase());
+//       $(newBtn).click(function () {
+//         newQuery($(this).attr("data-url"));
+//       });
+//       $("#buttons").append(newBtn);
+//     });
+//   });
+//   var newQuery = function (varQueryURL) {
+//     API_KEY = "79b9f9a7451896388ccd98b0e512c33ea8d732c4";
+//     $.ajax({
+//       url: varQueryURL,
+//       method: "GET",
+//       headers: {
+//         "Authorization": "Token " + API_KEY
+//       }
+//     }).then(function (response) {{
+
+//       var mSubGroup = {};
+//     for (var j = 0; j < response.count; j++) {
+//       mSubGroup[response.results[j].name] = response.results[j].id;
+//     };
+//     $.each(mSubGroup, function (index, value) {
+//       exerciseURL = "https://wger.de/api/v2/exercise/?category=" + value + "&language=2&license_author=wger.de&format=json";
+//       newBtn = $("<button>");
+//       newBtn.attr("data-url", exerciseURL);
+//       newBtn.text(index);
+//       newBtn.attr("id", index.toLowerCase());
+//       $(newBtn).click(function () {
+//         newQuery($(this).attr("data-url"));
+//       });
+//       $("#buttons").append(newBtn);
+//     });
+//   };
+  
+  
+//       console.log(response)
+//     });
+//   }
+
+// });
+// //imgUrl = "https://wger.de/api/v2/exerciseimage/"

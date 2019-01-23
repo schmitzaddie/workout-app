@@ -105,3 +105,16 @@ body {
   .show {
       display: block;
     }
+
+    #play:hover, #pause:hover, #stop:hover{
+        color: #a1308e;
+    }
+
+    .modal-title {
+        color:  #a1308e;
+    }
+    
+        .form-group {
+            color: #a1308e;
+        }
+    

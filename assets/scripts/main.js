@@ -15,12 +15,22 @@ $(document).ready(function () {
     storageBucket: "workout-app-4ece3.appspot.com",
     messagingSenderId: "1003379802026"
   };
-
+  
   firebase.initializeApp(config);
   var database = firebase.database();
-
+  var workout;
+  if (localStorage.getItem("userID") === null) {
+    window.location.href = "https://schmitzaddie.github.io/workout-app/";
+} else {
+    var userInfo = database.ref("users/" + localStorage.getItem("userID")+"/workout");
+    userInfo.once('value', function (snapshot) {
+        workout = snapshot.val();
+        $.each(workout, function(i,v){
+          $("#currentWorkout").append(i, v);
+        });
+    });
+};
   var sounds = ["sound1", "sound2", "sound3", "sound4", "sound5", "sound6", "sound7", "sound8", "sound9"];
-
   document.getElementById("inspo").onclick = function (){
     var index = Math.floor(Math.random() * sounds.length);
     var id = sounds[index];
@@ -41,17 +51,8 @@ $(document).ready(function () {
   });
 
 
-  $(".dropbtn").click(function () {
-    $("#myDropdown").toggleClass("show")
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = $(".dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        };
-      };
-    };
+  $("#dropbtn").click(function () {
+    // wrkOutDetails
   });
 
   $("#pause").on("click", stop);
@@ -60,11 +61,11 @@ $(document).ready(function () {
 
   var intervalId;
   var clockRunning = false;
-  var time = 3;
+  var time = 5*60;
 
 
   function reset() {
-    time = 10;
+    time = 5*60;
   }
 
   function start() {
@@ -108,35 +109,52 @@ $(document).ready(function () {
 
     return minutes + ":" + seconds;
   }
+  $("#subRec").on("click", function (event) {
+    console.log("test")
+    //no button reset
+    event.preventDefault();
+    //creating variables for each value//
+    workoutSummery = {
+      sets : $("#setInput").val().trim(),
+      reps : $("#repInput").val().trim(),
+      weight : $("#weightInput").val().trim()
 
+    }
+
+  
+    database.ref("users/" + localStorage.getItem("userID")).update(workoutSummery);
+  
+  });
+  var newPlaylist = function (playlistID) {
+    $("#selectPlaylist").empty()
+    skip = $("<div id='skip' class='skip timer zmdi zmdi-skip-next col-md-3'>");
+    prev = $("<div id='prev' class='skip timer zmdi zmdi-skip-previous col-md-3'>");
+    $("#selectPlaylist").append(prev, skip);
+    $(".skip").click( function() {
+      if (this.id == "skip") {
+        currentItem++;
+      } else {
+        currentItem--;
+      };
+      vidURL = "https://www.youtube.com/embed/" + youtubePlaylist.items[currentItem].contentDetails.videoId;
+      $("#ytplayer").attr("src", vidURL);
+    });
+    var queryURL =  "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=25&playlistId="
+                    +playlistID+
+                    "&key=AIzaSyCsAsCrQMs8kHpHEwtFqArNXzRZSqJ5kg8";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      currentItem = 0
+      youtubePlaylist = response;
+      vidURL = "https://www.youtube.com/embed/" + response.items[currentItem].contentDetails.videoId;
+      $("#ytplayer").attr("src", vidURL);
+    });
+  }
 
 });
 
-var newPlaylist = function (playlistID) {
-  $("#selectPlaylist").empty()
-  skip = $("<div id='skip' class='skip timer zmdi zmdi-skip-next col-md-3'>");
-  prev = $("<div id='prev' class='skip timer zmdi zmdi-skip-previous col-md-3'>");
-  $("#selectPlaylist").append(prev, skip);
-  $(".skip").click( function() {
-    if (this.id == "skip") {
-      currentItem++;
-    } else {
-      currentItem--;
-    };
-    vidURL = "https://www.youtube.com/embed/" + youtubePlaylist.items[currentItem].contentDetails.videoId;
-    $("#ytplayer").attr("src", vidURL);
-  });
-  var queryURL =  "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=25&playlistId="
-                  +playlistID+
-                  "&key=AIzaSyCsAsCrQMs8kHpHEwtFqArNXzRZSqJ5kg8";
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    currentItem = 0
-    youtubePlaylist = response;
-    vidURL = "https://www.youtube.com/embed/" + response.items[currentItem].contentDetails.videoId;
-    $("#player").append(vidURL);
-    $("#player").attr("src", vidURL);
-  });
-}
+
+
+

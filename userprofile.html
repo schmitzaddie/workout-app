@@ -15,26 +15,51 @@
         <h1 id="username">test</h1>
         <div class="row">
             <div class="col-6">
-                <h3>Workout Summery:</h3>
+                <h3>Last Workout:</h3>
                 <p id="workout"></p>
             </div>
-    
+
             <div class="col-6">
                 <h3>Build Workout:</h3>
-                <button class="btn btn-primary">New workout</button>
+                <button id="newWrk" class="btn btn-primary">New workout</button>
+                <div style="margin-top: 10px" id="wrkButtons"></div>
+
+                <div id="row">
+                    <div id="exToAdd"></div>
+                    <button id="subWorkout" class="btn btn-primary" style="display:none">Submit Workout</button>
+                </div>
             </div>
         </div>
         <br>
-        <div class="row justify-content-md-center"><a style="width: 395px;" href="https://schmitzaddie.github.io/workout-app/workout.html" ><button class="btn btn-primary">Go to workout</button></a></div>
-        
-        <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"></script>
-        <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-            crossorigin='anonymous'></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"></script>
-        <script src="assets/scripts/profile.js"></script>
+        <div class="row justify-content-md-center"><a style="width: 395px;" href="https://schmitzaddie.github.io/workout-app/workout.html"><button
+                    class="btn btn-primary">Go to workout</button></a></div>
+        <div class="modal fade" id="wrkModal" tabindex="-1" role="dialog" aria-labelledby="wrkModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="wrkModal">Add an excercise</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="assets/scripts/profile.js"></script>
 </body>
 
 </html>

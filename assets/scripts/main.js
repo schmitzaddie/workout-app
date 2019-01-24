@@ -154,7 +154,3 @@ $(document).ready(function () {
   }
 
 });
-
-
-
-
